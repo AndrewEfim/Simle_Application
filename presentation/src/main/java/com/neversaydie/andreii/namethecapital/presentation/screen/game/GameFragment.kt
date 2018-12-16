@@ -1,6 +1,7 @@
 package com.neversaydie.andreii.namethecapital.presentation.screen.game
 
 import android.arch.lifecycle.ViewModelProviders
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,8 @@ import com.neversaydie.andreii.namethecapital.presentation.screen.GameRouter
 import kotlinx.android.synthetic.main.fragment_game.*
 
 class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameBinding>() {
+
+
 
 
     override fun provideViewModel(): GameViewModel {

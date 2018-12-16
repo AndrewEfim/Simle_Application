@@ -1,8 +1,9 @@
 package com.neversaydie.andreii.namethecapital.presentation.screen.game
 
+import android.content.SharedPreferences
 import android.databinding.ObservableField
+import android.preference.PreferenceManager
 import android.util.Log
-import android.widget.Toast
 import com.neversaydie.andreii.domain.entity.Country
 import com.neversaydie.andreii.namethecapital.presentation.app.App
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseViewModel
@@ -14,20 +15,31 @@ import io.reactivex.rxkotlin.subscribeBy
 class GameViewModel : BaseViewModel<GameRouter>() {
 
     private val HELP_COUNT: Int = 4
+    private val WRONG_ANSWER_COUNT: Int = 4
+    private val END_GAME: String = "Вы проиграли !"
+    private val WRONG_ANSWER: String = "Ответ не верный"
+    private val WIN_GAME: String = "Вы выиграли"
+    private val SHARED_COUNTER_RESULT = "GAME_RESULT"
+
+    var sharedPref: SharedPreferences? = PreferenceManager.getDefaultSharedPreferences(App.instance)
+
     private val mCountry: MutableList<Country> = mutableListOf()
     private val mCounter: MutableList<Int> = ArrayList()
     private val getCountryUseCase = UseCaseProvider.provideCountryListUseCase()
     var score = ObservableField<String>("")
     var counter = 0
     var helpCounter = 0
+    var wrongAnswerCounter = 0
     var countryName = ObservableField<String>("")
     var capitalName = ObservableField<String>("")
-    var capitalHalp = ObservableField<String>("")
+    var capitalHelp = ObservableField<String>("")
     fun setCountry(country: String) {
         countryName.set(country)
     }
 
     init {
+
+
         addToDisposable(getCountryUseCase.get()
                 .subscribeBy(onNext = {
                     mCountry.addAll(it)
@@ -40,7 +52,7 @@ class GameViewModel : BaseViewModel<GameRouter>() {
 
 
     fun checkAnswer() {
-        capitalHalp.set(mCountry.get(counter).capital)//
+        capitalHelp.set(mCountry.get(counter).capital)//
 
         if ((mCountry.get(counter).capital).equals(capitalName.get(), ignoreCase = true)) {
             counter++
@@ -49,10 +61,10 @@ class GameViewModel : BaseViewModel<GameRouter>() {
             capitalName.set("")
 
             countryName.set(mCountry.get(counter).country)
-            capitalHalp.set(mCountry.get(counter).capital)
+            capitalHelp.set(mCountry.get(counter).capital)
 
             if (counter == mCountry.size) {
-                countryName.set("Вы выиграли")
+                countryName.set(WIN_GAME)
             }
 
             Log.d("myLog", "answer is correct")
@@ -61,19 +73,33 @@ class GameViewModel : BaseViewModel<GameRouter>() {
             Log.d("myLog", "counter" + counter.toString() + "..." + mCounter.size)
 
         } else {
-            countryName.set("Ответ не верный")
-            //FIXME go to help
+            countryName.set(WRONG_ANSWER)
+            wrongAnswerCounter++
+
             Log.d("myLog", "answer is not correct")
             Log.d("myLog", "checkAnswer" + countryName.get() + "..." + capitalName.get())
             Log.d("myLog", "checkAnswer")
             Log.d("myLog", "counter" + counter.toString() + "..." + mCounter.size)
         }
+        if (wrongAnswerCounter == WRONG_ANSWER_COUNT) {
+            countryName.set(END_GAME)
+            saveResult()
+        }
+
+
     }
+
+    fun saveResult() {
+        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT, counter)?.apply()
+
+    }
+
 
     fun asckHelp() {
         helpCounter++
         if (helpCounter == HELP_COUNT) {
-            capitalHalp.set("Подсказок больше нет")
+            capitalHelp.set("Подсказок больше нет")
+
         }
 
 

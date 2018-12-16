@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NameTheCapital</string>
+    <string name="logo_name">Назови Столицу</string>
+    <string name="logo_name_button">Играть</string>
+    <string name="logo_result">Лучший результат</string>
+
 </resources>

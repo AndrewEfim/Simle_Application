@@ -25,8 +25,6 @@ class LogoFragment:BaseMvvmFragment<LogoViewModel,GameRouter,FragmentLogoBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-      //  val buttonGoToGame=buttonGoToGame
-
         buttonGoToGame.setOnClickListener(View.OnClickListener {
             router?.goToGame()
         })
