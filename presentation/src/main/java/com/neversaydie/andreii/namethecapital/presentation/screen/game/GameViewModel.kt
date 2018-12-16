@@ -83,7 +83,9 @@ class GameViewModel : BaseViewModel<GameRouter>() {
         }
         if (wrongAnswerCounter == WRONG_ANSWER_COUNT) {
             countryName.set(END_GAME)
-            saveResult()
+            if (counter > getResult()) {
+                saveResult()
+            }
             router?.goToLogo()
         }
 
@@ -93,6 +95,11 @@ class GameViewModel : BaseViewModel<GameRouter>() {
     fun saveResult() {
         sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT, counter)?.apply()
 
+    }
+
+    fun getResult(): Int {
+        val getResult: Int = sharedPref!!.getInt(SHARED_COUNTER_RESULT, 0)
+        return getResult
     }
 
 
