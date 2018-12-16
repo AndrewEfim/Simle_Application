@@ -35,8 +35,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:text="@{viewModel.score}"
-            android:textColor="#198c05"
-            android:textSize="20sp"
+            android:textColor="#111111"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -84,6 +84,7 @@ class GameViewModel : BaseViewModel<GameRouter>() {
         if (wrongAnswerCounter == WRONG_ANSWER_COUNT) {
             countryName.set(END_GAME)
             saveResult()
+            router?.goToLogo()
         }
 
 
