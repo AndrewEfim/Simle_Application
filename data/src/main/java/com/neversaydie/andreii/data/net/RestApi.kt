@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface RestApi {
 
-
-    @GET("countrys")
+//?pageSize=100
+    @GET("countrys?pageSize=100")
     fun getCountry():Observable<List<CountryResponse>>
 }

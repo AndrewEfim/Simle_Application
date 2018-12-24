@@ -3,5 +3,8 @@
     <string name="logo_name">Назови Столицу</string>
     <string name="logo_name_button">Играть</string>
     <string name="logo_result">Лучший результат</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id1">ca-app-pub-2168756955488044/8504031904</string>
+
 
 </resources>
