@@ -2,17 +2,16 @@ package com.neversaydie.andreii.namethecapital.presentation.screen.game
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.View
 import com.neversaydie.andreii.namethecapital.R
+import com.neversaydie.andreii.namethecapital.R.id.buttonCheckAnswer
 import com.neversaydie.andreii.namethecapital.databinding.FragmentGameV1Binding
 import com.neversaydie.andreii.namethecapital.presentation.app.App
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseMvvmFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.GameRouter
-import kotlinx.android.synthetic.main.fragment_game.*
 import kotlinx.android.synthetic.main.fragment_game_v1.*
 
 class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1Binding>() {
@@ -34,6 +33,7 @@ class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1B
         val buttonCheckAnswer = buttonCheckAnswer
 
         textView_Help_v1.visibility = View.GONE
+
 
         button_Help.setOnClickListener(View.OnClickListener {
             textView_Help_v1.visibility = View.VISIBLE

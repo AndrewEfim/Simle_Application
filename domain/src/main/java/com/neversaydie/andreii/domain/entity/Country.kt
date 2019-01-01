@@ -6,7 +6,9 @@ data class Country(
         val capital: String,
         val otherCityOne: String,
         val otherCityTwo: String,
-        val otherCityThree: String
+        val otherCityThree: String,
+        val continent:String,
+        val flag:String
 
 ) : DomainEntity {
 }

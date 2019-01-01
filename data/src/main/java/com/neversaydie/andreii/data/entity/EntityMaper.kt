@@ -6,5 +6,8 @@ fun CountryResponse.transformToDomain(): Country {
     return Country(id = id, country = country, capital = capital
             , otherCityOne = otherCityOne
             , otherCityTwo = otherCityTwo
-            , otherCityThree = otherCityThree)
+            , otherCityThree = otherCityThree
+            , continent = continent
+            , flag = flag)
 }
+

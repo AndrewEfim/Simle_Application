@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorLevelOneBackground">#4091fa</color>
+    <color name="colorLevelTwoBackground">#fae605</color>
+    <color name="colorLevelThreeBackground">#da0a22</color>
+    <color name="colorLevelFourBackground">#e7e015</color>
+    <color name="colorLevelFiveBackground">#b3b299</color>
+    <color name="colorRed">#ff1500</color>
+    <color name="colorBlack">#111111</color>
+
+
 </resources>

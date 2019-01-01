@@ -36,4 +36,8 @@ class RestService(private val apiUrl: String) {
       //  Log.d(TARGET_LOG,"getCountry from RestService")
         return restApi.getCountry()
     }
+
+    fun getCountrysByContinent(continent:String):Observable<List<CountryResponse>>{
+        return restApi.getCountryByContinent(continent)
+    }
 }

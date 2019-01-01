@@ -28,6 +28,7 @@ class GameViewModel : BaseViewModel<GameRouter>() {
     private val WIN_GAME: String = "Вы выиграли"
     private val SHARED_COUNTER_RESULT = "GAME_RESULT"
 
+
     var sharedPref: SharedPreferences? = PreferenceManager.getDefaultSharedPreferences(App.instance)
 
     private val mCountry: MutableList<Country> = mutableListOf()

@@ -2,6 +2,7 @@ package com.neversaydie.andreii.namethecapital.presentation.factories
 
 import com.neversaydie.andreii.data.net.RestService
 import com.neversaydie.andreii.data.repositories.CountryRepositoryImpl
+import com.neversaydie.andreii.domain.usecases.GetCountryByContinentUseCase
 import com.neversaydie.andreii.domain.usecases.GetCountryUseCase
 import com.neversaydie.andreii.namethecapital.presentation.executor.UIThread
 
@@ -14,5 +15,9 @@ object UseCaseProvider {
 
     fun provideCountryListUseCase(): GetCountryUseCase {
         return GetCountryUseCase(uiThread, cntrRpstr)
+    }
+
+    fun provideCountryByContinentListUseCase():GetCountryByContinentUseCase{
+        return GetCountryByContinentUseCase(uiThread, cntrRpstr)
     }
 }

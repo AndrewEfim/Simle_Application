@@ -14,6 +14,10 @@ data class CountryResponse(
         @SerializedName("othercity_two")
         val otherCityTwo: String,
         @SerializedName("othercity_three")
-        val otherCityThree: String
+        val otherCityThree: String,
+        @SerializedName("continent")
+        val continent: String,
+        @SerializedName("flag")
+        val flag:String
 ) {
 }
