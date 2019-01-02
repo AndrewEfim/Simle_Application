@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.neversaydie.andreii.namethecapital.presentation.screen.game.GameViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#26b45a"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="332dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView_tries"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Попытки"
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <TextView
+                android:id="@+id/textView_helps"
+                android:layout_width="76dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Подсказки" />
+
+            <TextView
+                android:id="@+id/textView_points"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Очки" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="332dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/textView_number_points"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:background="#111111"
+                android:gravity="center"
+                android:text="@{viewModel.attemps}"
+                android:textColor="#26b45a" />
+
+            <TextView
+                android:id="@+id/textView_number_helps"
+                android:layout_width="76dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:background="#111111"
+                android:gravity="center"
+                android:text="@{viewModel.tips}"
+                android:textColor="#26b45a" />
+
+            <TextView
+                android:id="@+id/textView_number_tries"
+                android:layout_width="64dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:background="#111111"
+                android:gravity="center"
+                android:text="@{viewModel.score}"
+                android:textColor="#26b45a"
+
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView_Country_Name"
+            android:layout_width="332dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{viewModel.countryName}"
+            android:textColor="#111111"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/textView_Country_Name_II"
+            android:layout_width="332dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@{viewModel.countryNameV_II}"
+            android:textColor="#111111"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView_Help_v1"
+            android:layout_width="332dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="2dp"
+            android:textSize="25sp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="@{viewModel.capitalHelp}"
+            android:textColor="#111111" />
+
+
+        <LinearLayout
+            android:layout_width="332dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAnswer_1"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@{viewModel.answer_one}"
+                android:textColor="#26b45a" />
+
+            <Button
+                android:id="@+id/buttonAnswer_2"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@{viewModel.answer_two}"
+                android:textColor="#26b45a" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="332dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAnswer_3"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@{viewModel.answer_three}"
+                android:textColor="#26b45a" />
+
+            <Button
+                android:id="@+id/buttonAnswer_4"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@{viewModel.answer_four}"
+                android:textColor="#26b45a" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_Help"
+            android:layout_width="332dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="0.05"
+            android:background="@drawable/selector_button"
+            android:text="Помощь"
+            android:textColor="#26b45a" />
+
+    </LinearLayout>
+</layout>
