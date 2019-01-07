@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.v4.app.DialogFragment
 import android.util.Log
 import android.view.View
 import com.google.android.gms.ads.AdRequest
@@ -13,6 +14,7 @@ import com.neversaydie.andreii.namethecapital.databinding.FragmentLogoBinding
 import com.neversaydie.andreii.namethecapital.presentation.app.App
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseMvvmFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.GameRouter
+import com.neversaydie.andreii.namethecapital.presentation.screen.MyDialog
 import kotlinx.android.synthetic.main.fragment_logo.*
 
 class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBinding>() {
@@ -22,6 +24,11 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
     private val SHARED_COUNTER_RESULT_LVL_THREE = "GAME_RESULT_LVL_THREE"
     private val SHARED_COUNTER_RESULT_LVL_FOUR = "GAME_RESULT_LVL_FOUR"
     private val SHARED_COUNTER_RESULT_LVL_FIVE = "GAME_RESULT_LVL_FIVE"
+    private val SHARED_CONNECTION = "Connection"
+
+
+
+    var fragDialog: DialogFragment? = null
 
     override fun provideViewModel(): LogoViewModel {
         return ViewModelProviders.of(this).get(LogoViewModel::class.java)
@@ -34,6 +41,9 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        fragDialog = MyDialog()
+
         val sharedPreference: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.instance)
 
         val resultLvlOne = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0))
@@ -41,14 +51,17 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
         val resultLvlThree = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_THREE, 0))
         val resultLvlFour = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FOUR, 0))
         val resultLvlFive = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0))
+        val connection: Boolean = (sharedPreference.getBoolean(SHARED_CONNECTION, false))
 
 
         val mAdView: AdView = adView
         val adRequest: AdRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
+
+
         textView_title.setOnClickListener({
-            viewModel.setZeroToLevels()
+           // viewModel.setZeroToLevels()
             Log.d("myLog", "viewModel.setZeroToLevels()")
         })
 
@@ -77,7 +90,12 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
             button_lvl_5.visibility = View.VISIBLE
             button_lvl_5.isEnabled = true
         }
-
+//FIXME потом настороить, а может быть удалить
+        if (connection == false) {
+            Log.d("myLog", "connection" + connection)
+            (fragDialog as MyDialog).show(fragmentManager, "fragDialog")//
+        }
+//
         button_lvl_1.setOnClickListener({
             router?.goToLevelOne()
         })
@@ -93,6 +111,7 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
         button_lvl_5.setOnClickListener({
             router?.goToLevelFive()
         })
+
 
     }
 

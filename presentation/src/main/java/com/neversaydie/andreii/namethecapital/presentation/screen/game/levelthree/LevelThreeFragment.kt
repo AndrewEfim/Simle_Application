@@ -6,11 +6,9 @@ import android.util.Log
 import android.view.View
 import com.neversaydie.andreii.namethecapital.R
 import com.neversaydie.andreii.namethecapital.databinding.FragmentLevelThreeBinding
-import com.neversaydie.andreii.namethecapital.databinding.FragmentLevelTwoBinding
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseMvvmFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.GameRouter
 import kotlinx.android.synthetic.main.fragment_level_three.*
-import kotlinx.android.synthetic.main.fragment_level_two.*
 
 class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, FragmentLevelThreeBinding>() {
 
@@ -33,6 +31,10 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
         button_Help_level_three.setOnClickListener(View.OnClickListener {
             textView_Help_v1_level_three.visibility = View.VISIBLE
             viewModel.asckHelp()
+            if (viewModel.helpCounter_level_three == 3) {
+                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_three)
+                button_Help_level_three.isClickable=false
+            }
         })
 
         buttonAnswer_1_level_three.setOnClickListener(View.OnClickListener {

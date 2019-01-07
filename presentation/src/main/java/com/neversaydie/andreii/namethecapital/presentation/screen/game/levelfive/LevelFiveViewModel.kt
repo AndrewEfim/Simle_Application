@@ -196,7 +196,7 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
 
             Timer().schedule(object : TimerTask() {
                 override fun run() {
-                    router?.goToLogo()
+                    router?.goToGameResult()
                 }
             }, 2000)
         }

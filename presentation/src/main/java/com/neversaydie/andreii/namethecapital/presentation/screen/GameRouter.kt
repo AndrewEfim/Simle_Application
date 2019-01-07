@@ -4,6 +4,7 @@ import android.util.Log
 import com.neversaydie.andreii.namethecapital.R
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseRouter
 import com.neversaydie.andreii.namethecapital.presentation.screen.game.GameFragment
+import com.neversaydie.andreii.namethecapital.presentation.screen.game.gameresult.GameResultFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.game.levelfive.LevelFiveFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.game.levelfour.LevelFourFragment
 import com.neversaydie.andreii.namethecapital.presentation.screen.game.levelone.LevelOneFragment
@@ -35,18 +36,21 @@ class GameRouter(activity: GameMainActivity) : BaseRouter<GameMainActivity>(acti
                 , R.id.fragmentConteiner, false)
         Log.d(TAG, "goToLevelOne")
     }
+
     fun goToLevelTwo() {
         replaceFragment(activity.supportFragmentManager
                 , LevelTwoFragment()
                 , R.id.fragmentConteiner, false)
         Log.d(TAG, "goToLevelTow")
     }
+
     fun goToLevelThree() {
         replaceFragment(activity.supportFragmentManager
                 , LevelThreeFragment()
                 , R.id.fragmentConteiner, false)
         Log.d(TAG, "goToLevelThree")
     }
+
     fun goToLevelFour() {
         replaceFragment(activity.supportFragmentManager
                 , LevelFourFragment()
@@ -59,6 +63,13 @@ class GameRouter(activity: GameMainActivity) : BaseRouter<GameMainActivity>(acti
                 , LevelFiveFragment()
                 , R.id.fragmentConteiner, false)
         Log.d(TAG, "goToLevelFive")
+    }
+
+    fun goToGameResult() {
+        replaceFragment(activity.supportFragmentManager
+                , GameResultFragment()
+                , R.id.fragmentConteiner, false)
+        Log.d(TAG, "goToGameResult")
     }
 
 }

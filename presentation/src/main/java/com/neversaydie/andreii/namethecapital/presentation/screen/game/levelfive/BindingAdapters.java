@@ -7,7 +7,7 @@ import com.squareup.picasso.Picasso;
 
 public class BindingAdapters {
     @BindingAdapter({"app:url"})
-    public static void loadImage(ImageView imageView, String imageUrl) {
+    public  static void loadImage(ImageView imageView, String imageUrl) {
         Picasso.get().load(imageUrl).into(imageView);
     }
 }

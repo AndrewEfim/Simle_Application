@@ -1,22 +1,22 @@
 package com.neversaydie.andreii.namethecapital.presentation.screen.logo
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.databinding.ObservableField
+import android.net.ConnectivityManager
 import android.preference.PreferenceManager
 import android.support.annotation.IntegerRes
+import android.support.v4.content.ContextCompat.getSystemService
 import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import com.neversaydie.andreii.namethecapital.presentation.app.App
 import com.neversaydie.andreii.namethecapital.presentation.base.BaseViewModel
 import com.neversaydie.andreii.namethecapital.presentation.screen.GameRouter
+import kotlin.coroutines.experimental.coroutineContext
 
 class LogoViewModel : BaseViewModel<GameRouter>() {
     private val SHARED_COUNTER_RESULT = "GAME_RESULT"
-    private val SHARED_COUNTER_RESULT_LVL_ONE = "GAME_RESULT_ONE"
-    private val SHARED_COUNTER_RESULT_LVL_TWO = "GAME_RESULT_LVL_TWO"
-    private val SHARED_COUNTER_RESULT_LVL_THREE = "GAME_RESULT_LVL_THREE"
-    private val SHARED_COUNTER_RESULT_LVL_FOUR = "GAME_RESULT_LVL_FOUR"
-    private val SHARED_COUNTER_RESULT_LVL_FIVE = "GAME_RESULT_LVL_FIVE"
     var sharedPref: SharedPreferences? = PreferenceManager.getDefaultSharedPreferences(App.instance)
 
     var sharedPreference: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.instance)
@@ -35,38 +35,40 @@ class LogoViewModel : BaseViewModel<GameRouter>() {
         // if (Integer.parseInt(result.get().toString()) < newResult) {
         //result.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0).toString())
 
-        resultLevelOne.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0).toString())
-        resultLevelTwo.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_TWO, 0).toString())
-        resultLevelThree.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_THREE, 0).toString())
-        resultLevelFour.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FOUR, 0).toString())
-        resultLevelFive.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0).toString())
-
-        commonResult.set((sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0)
-                + sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_TWO, 0)
-                + sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_THREE, 0)
-                + sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FOUR, 0)
-                + sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0)).toString()
-        )
-
 
 // FIXME       if (Integer.parseInt(result.get().toString()) < sharedPreference.getInt(SHARED_COUNTER_RESULT, 0)) {
-//            result.set(sharedPreference.getInt(SHARED_COUNTER_RESULT, 0).toString())
 //        }
 
     }
 
-    fun setZeroToLevels() {
-        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT_LVL_ONE, 0)?.apply()
-        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT_LVL_TWO, 0)?.apply()
-        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT_LVL_THREE, 0)?.apply()
-        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT_LVL_FOUR, 0)?.apply()
-        sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0)?.apply()
-        resultLevelOne.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0).toString())
-        resultLevelTwo.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_TWO, 0).toString())
-        resultLevelThree.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_THREE, 0).toString())
-        resultLevelFour.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FOUR, 0).toString())
-        resultLevelFive.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0).toString())
+    fun setZero() {
+        resultLevelOne.set("0")
+        resultLevelTwo.set("")
+        resultLevelThree.set("")
+        resultLevelFour.set("")
+        resultLevelFive.set("")
+    }
 
+    fun isOnline(): Boolean {
+        val cs: String = Context.CONNECTIVITY_SERVICE
+        val cm: ConnectivityManager = App.instance.applicationContext.getSystemService(cs) as ConnectivityManager
+        if (cm.activeNetworkInfo == null) {
+            return false
+        } else {
+            return false
+        }
+    }
+
+
+    fun checkNetConnection() {
+        if (isOnline()) {
+            Log.d("myLog", "isOnline on " + isOnline())
+            Toast.makeText(App.instance.applicationContext, "Интернет подключен", Toast.LENGTH_SHORT).show()
+        } else {
+            Log.d("myLog", "isOnline of " + isOnline())
+
+            Toast.makeText(App.instance.applicationContext, "Проверьте подключение к интернету", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 

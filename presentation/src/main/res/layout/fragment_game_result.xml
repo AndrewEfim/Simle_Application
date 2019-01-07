@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.neversaydie.andreii.namethecapital.presentation.screen.game.gameresult.GameResultViewModel" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_game_result_h_s">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="144dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="16dp"
+            android:text="Рзультат игры"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:textColor="@color/colorRed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_frag_game_result_lvl_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="53dp"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:text="Уровень №1"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_frag_game_result_lvl_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="Уровень №2"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_one" />
+
+        <TextView
+            android:id="@+id/textView_frag_game_result_lvl_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:text="Уровень №3"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_two" />
+
+        <TextView
+            android:id="@+id/textView_frag_game_result_lvl_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="Уровень №4"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_three" />
+
+        <TextView
+            android:id="@+id/textView_frag_game_result_lvl_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="Уровень №5"
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_four" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_lvl_one_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="53dp"
+            android:text="@{viewModel.resultLevelOne}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_lvl_one"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_lvl_two_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="2dp"
+            android:text="@{viewModel.resultLevelTwo}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_lvl_two"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_one_score" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_lvl_three_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="2dp"
+            android:text="@{viewModel.resultLevelThree}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_lvl_three"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_two_score" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_lvl_four_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="2dp"
+            android:text="@{viewModel.resultLevelFour}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_lvl_four"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_three_score" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_lvl_five_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="2dp"
+            android:text="@{viewModel.resultLevelFive}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_lvl_five"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_four_score" />
+
+        <TextView
+            android:fontFamily="@font/terminator_cyr_four_seb"
+            android:id="@+id/textView_frag_game_result_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/Summ"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_five" />
+
+        <TextView
+
+            android:id="@+id/textView_frag_game_result_total_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="20dp"
+            android:text="@{viewModel.commonResult}"
+            android:textColor="@color/colorRed"
+            app:layout_constraintStart_toEndOf="@+id/textView_frag_game_result_total"
+            app:layout_constraintTop_toBottomOf="@+id/textView_frag_game_result_lvl_five_score" />
+
+        <Button
+            android:id="@+id/button_game_resul_fragment_go_start"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/selector_button"
+            android:text="@string/nameGoToStart"
+            android:textColor="@color/colorRed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_game_resul_set_zero"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/selector_button"
+            android:text="@string/SetZero"
+            android:textColor="@color/colorRed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_game_resul_fragment_go_start" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

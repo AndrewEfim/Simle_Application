@@ -35,6 +35,11 @@ class LevelFiveFragment : BaseMvvmFragment<LevelFiveViewModel, GameRouter, Fragm
         button_Help_level_five.setOnClickListener(View.OnClickListener {
             textView_Help_v1_level_five.visibility = View.VISIBLE
             viewModel.asckHelp()
+            if (viewModel.helpCounter_level_five == 3) {
+                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_five)
+                button_Help_level_five.isClickable=false
+            }
+
         })
 
         buttonAnswer_1_level_five.setOnClickListener(View.OnClickListener {
@@ -73,6 +78,7 @@ class LevelFiveFragment : BaseMvvmFragment<LevelFiveViewModel, GameRouter, Fragm
 
             Log.d("myLog", "buttonAnswer_4")
         })
+
     }
 
 }

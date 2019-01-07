@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.neversaydie.andreii.namethecapital.presentation.screen.logo.LogoViewModel" />
@@ -16,158 +15,25 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#3fdc79">
+        android:background="@drawable/ic_main_h_s">
 
         <TextView
             android:id="@+id/textView_title"
             android:layout_width="263dp"
-            android:layout_height="59dp"
+            android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/zzs_golden_eye"
+            android:fontFamily="@font/terminator_cyr_four_seb"
             android:gravity="center"
             android:text="@string/logo_name"
+            android:textColor="@color/colorBlack"
             android:textSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView_Lvl_one"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="65dp"
-            android:text="Уровень №1"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView_Lvl_two"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="1dp"
-            android:text="Уровень №2"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_Lvl_one" />
-
-        <TextView
-            android:id="@+id/textView_Lvl_three"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="1dp"
-            android:text="Уровень №3"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_Lvl_two" />
-
-        <TextView
-            android:id="@+id/textView_Lvl_four"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="1dp"
-            android:text="Уровень №4"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_Lvl_three" />
-
-        <TextView
-            android:id="@+id/textView_Lvl_five"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="1dp"
-            android:text="Уровень №5"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_Lvl_four" />
-
-        <TextView
-            android:id="@+id/textView_common_result"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="4dp"
-            android:text="Набранные очки"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_Lvl_five" />
-
-        <TextView
-            android:id="@+id/textView_result_lvl_1"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="65dp"
-            android:gravity="center"
-            android:text="@{viewModel.resultLevelOne}"
-
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView_result_lvl_2"
-            android:layout_width="50dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="1dp"
-            android:gravity="center"
-            android:text="@{viewModel.resultLevelTwo}"
-            android:textSize="14sp"
-            ads:layout_constraintBottom_toTopOf="@+id/textView_result_lvl_3"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_result_lvl_1" />
-
-        <TextView
-            android:id="@+id/textView_result_lvl_3"
-            android:layout_width="50dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="1dp"
-            android:gravity="center"
-            android:text="@{viewModel.resultLevelThree}"
-            android:textSize="14sp"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_result_lvl_2" />
-
-        <TextView
-            android:id="@+id/textView_result_lvl_4"
-            android:layout_width="50dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="1dp"
-            android:gravity="center"
-            android:text="@{viewModel.resultLevelFour}"
-            android:textSize="14sp"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_result_lvl_3" />
-
-        <TextView
-            android:id="@+id/textView_result_lvl_5"
-            android:layout_width="50dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="60dp"
-            android:gravity="center"
-            android:text="@{viewModel.resultLevelFive}"
-            android:textSize="14sp"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_result_lvl_4" />
-
-        <TextView
-            android:id="@+id/textView_result_common"
-            android:layout_width="50dp"
-            android:layout_height="27dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="1dp"
-            android:gravity="center"
-            android:text="@{viewModel.commonResult}"
-            android:textSize="14sp"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/textView_result_lvl_5" />
-
 
         <LinearLayout
             android:id="@+id/linearLayout_buttons"
