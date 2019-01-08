@@ -95,19 +95,11 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
         addToDisposable(getCountryUseCase.get()
                 .subscribeBy(onNext = {
                     mAllCountry.addAll(it)
-                    //mAfricaCountry.addAll(it)
 
                     mOtherCountry.add(mAllCountry.get(counter_level_five).country)
                     mOtherCountry.add(mAllCountry.get(randomCounterOne).country)
                     mOtherCountry.add(mAllCountry.get(randomCounterTwo).country)
                     mOtherCountry.add(mAllCountry.get(randomCounterThree).country)
-                    Log.d("myLog", "mCountry " + mAllCountry.size)
-
-                    Log.d("myLog", "randomCounterOne " + randomCounterOne)
-                    Log.d("myLog", "randomCounterTwo " + randomCounterTwo)
-                    Log.d("myLog", "randomCounterThree " + randomCounterThree)
-
-
 
                     answer_one_level_five.set(mOtherCountry.get(randomOne))
                     answer_two_level_five.set(mOtherCountry.get(randomTwo))
@@ -118,14 +110,6 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
                     countryName_level_five.set(mAllCountry.get(counter_level_five).country)
 
                     capitalHelp_level_five.set(mAllCountry.get(counter_level_five).country)
-
-                    Log.d("myLog", "random One " + randomOne)
-                    Log.d("myLog", "random Two " + randomTwo)
-                    Log.d("myLog", "random Three " + randomThree)
-                    Log.d("myLog", "random Four " + randomFour)
-
-                    Log.d("myLog", "mCountry" + mAllCountry.size.toString())
-                    Log.d("myLog", "counter" + counter_level_five.toString())
                 }))
     }
 
@@ -135,8 +119,6 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
 
         if ((mAllCountry.get(counter_level_five).country).equals(capitalName_level_five.get(), ignoreCase = true)) {
             counter_level_five++
-            Log.d("myLog", "mCountry.size " + mAllCountry.size + " " + "counter " + counter_level_five)
-            Log.d("myLog", "mCountry.size " + (counter_level_five == (mAllCountry.size - 1)))
             mCounter_level_five.add(counter_level_five)
             score_level_five.set(counter_level_five.toString())
             countryNameV_II_level_five.set("")
@@ -164,34 +146,25 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
         } else {
             countryNameV_II_level_five.set(WRONG_ANSWER)
             wrongAnswerCounter_level_five++
-
-            Log.d("myLog", "answer is not correct")
-            Log.d("myLog", "checkAnswer" + countryName_level_five.get() + "..." + capitalName_level_five.get())
-            Log.d("myLog", "checkAnswer")
-            Log.d("myLog", "counter" + counter_level_five.toString() + "..." + mCounter_level_five.size)
         }
         if (wrongAnswerCounter_level_five == WRONG_ANSWER_COUNT) {
             countryName_level_five.set(END_GAME)
-//            if (counter_level_five > getResult()) {
-//                saveResult()
-//            }
             saveResult()
-
             router?.goToLogo()
         }
         attemps_level_five.set((ATTEMPS - wrongAnswerCounter_level_five).toString())
         tips_level_five.set((TIPS - helpCounter_level_five).toString())
-
-        if (counter_level_five == (mAllCountry.size - 1)) {
+                //mAllCountry.size - 1
+        if (counter_level_five == (3)) {
             countryName_level_five.set(WIN_LEVEL_FIVE)
+
+            flagUrl_level_five.set("some url")
 
             answer_one_level_five.set("")
             answer_two_level_five.set("")
             answer_three_level_five.set("")
             answer_four_level_five.set("")
 
-            Log.d("myLog", "mCountry.size " + mAllCountry.size + " " + "counter " + counter_level_five)
-            Log.d("myLog", "Win Game")
             saveResult()
 
             Timer().schedule(object : TimerTask() {

@@ -27,7 +27,6 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
     private val SHARED_CONNECTION = "Connection"
 
 
-
     var fragDialog: DialogFragment? = null
 
     override fun provideViewModel(): LogoViewModel {
@@ -61,7 +60,7 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
 
 
         textView_title.setOnClickListener({
-           // viewModel.setZeroToLevels()
+            // viewModel.setZeroToLevels()
             Log.d("myLog", "viewModel.setZeroToLevels()")
         })
 
