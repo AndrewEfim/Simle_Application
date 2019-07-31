@@ -22,7 +22,7 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
     private val WRONG_ANSWER_COUNT: Int = 4
     private val END_GAME: String = "Вы проиграли !"
     private val WRONG_ANSWER: String = "Ответ не верный"
-    private val WIN_LEVEL_FIVE: String = "Вы выиграли уровень №5"
+    private val WIN_LEVEL_FIVE: String = "Вы прошли Уровень №5"
     private val WIN_GAME: String = "Вы выиграли!"
     private val SHARED_COUNTER_RESULT_LVL_FIVE = "GAME_RESULT_LVL_FIVE"
 
@@ -77,8 +77,8 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
             generated.add(r.nextInt(4))
         }
 //FIXME
-        while (generatedCountry.size < 96) {
-            generatedCountry.add(r.nextInt(96))
+        while (generatedCountry.size < 99) {
+            generatedCountry.add(r.nextInt(99))
         }
 
         generatedList.addAll(generated)
@@ -88,9 +88,9 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
         randomThree = generatedList.get(2)
         randomFour = generatedList.get(3)
 
-        randomCounterOne = generatedListCountry.get(r.nextInt(96))
-        randomCounterTwo = generatedListCountry.get(r.nextInt(96))
-        randomCounterThree = generatedListCountry.get(r.nextInt(96))
+        randomCounterOne = generatedListCountry.get(r.nextInt(99))
+        randomCounterTwo = generatedListCountry.get(r.nextInt(99))
+        randomCounterThree = generatedListCountry.get(r.nextInt(99))
 
         addToDisposable(getCountryUseCase.get()
                 .subscribeBy(onNext = {
@@ -135,9 +135,9 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
             randomThree = generatedList.get(2)
             randomFour = generatedList.get(3)
             Collections.shuffle(generatedListCountry)
-            randomCounterOne = generatedListCountry.get(r.nextInt(96))
-            randomCounterTwo = generatedListCountry.get(r.nextInt(96))
-            randomCounterThree = generatedListCountry.get(r.nextInt(96))
+            randomCounterOne = generatedListCountry.get(r.nextInt(99))
+            randomCounterTwo = generatedListCountry.get(r.nextInt(99))
+            randomCounterThree = generatedListCountry.get(r.nextInt(99))
 
             setAnswerButton()
 
@@ -155,7 +155,7 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
         attemps_level_five.set((ATTEMPS - wrongAnswerCounter_level_five).toString())
         tips_level_five.set((TIPS - helpCounter_level_five).toString())
                 //mAllCountry.size - 1
-        if (counter_level_five == (3)) {
+        if (counter_level_five == (mAllCountry.size - 1)) {
             countryName_level_five.set(WIN_LEVEL_FIVE)
 
             flagUrl_level_five.set("some url")
@@ -176,9 +176,9 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
     }
 
     fun genereted() {
-        randomCounterOne = generatedListCountry.get(r.nextInt(96))
-        randomCounterTwo = generatedListCountry.get(r.nextInt(96))
-        randomCounterThree = generatedListCountry.get(r.nextInt(96))
+        randomCounterOne = generatedListCountry.get(r.nextInt(99))
+        randomCounterTwo = generatedListCountry.get(r.nextInt(99))
+        randomCounterThree = generatedListCountry.get(r.nextInt(99))
     }
 
     fun setMOtherCity() {
@@ -216,22 +216,18 @@ class LevelFiveViewModel : BaseViewModel<GameRouter>() {
 
     fun setAnswerOne() {
         capitalName_level_five.set(answer_one_level_five.get())
-        Log.d("myLog", "setAnswer 1()" + capitalName_level_five.get())
     }
 
     fun setAnswerTwo() {
         capitalName_level_five.set(answer_two_level_five.get())
-        Log.d("myLog", "setAnswer 2()" + capitalName_level_five.get())
     }
 
     fun setAnswerThree() {
         capitalName_level_five.set(answer_three_level_five.get())
-        Log.d("myLog", "setAnswer 3()" + capitalName_level_five.get())
     }
 
     fun setAnswerFour() {
         capitalName_level_five.set(answer_four_level_five.get())
-        Log.d("myLog", "setAnswer 4()" + capitalName_level_five.get())
     }
 
 

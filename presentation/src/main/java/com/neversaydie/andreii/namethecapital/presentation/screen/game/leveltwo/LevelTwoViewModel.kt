@@ -22,13 +22,10 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
     private val WRONG_ANSWER_COUNT: Int = 4
     private val END_GAME: String = "Вы проиграли !"
     private val WRONG_ANSWER: String = "Ответ не верный"
-    private val WIN_LEVEL_TWO: String = "Вы выиграли уровень №2"
+    private val WIN_LEVEL_TWO: String = "Вы прошли Уровень №2"
     private val SHARED_COUNTER_RESULT_LVL_TWO = "GAME_RESULT_LVL_TWO"
 
-
-
     var sharedPref: SharedPreferences? = PreferenceManager.getDefaultSharedPreferences(App.instance)
-
 
     var countryName_level_two = ObservableField<String>("")
     var countryNameV_II_level_two = ObservableField<String>("")
@@ -77,9 +74,6 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
         randomThree = generatedList.get(2)
         randomFour = generatedList.get(3)
 
-
-
-
         addToDisposable(getCountryByContinentUseCase.getByContinent(continent)
                 .subscribeBy(onNext = {
                     mAllCountry.addAll(it)
@@ -89,7 +83,6 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
                     mOtherAsiaCity.add(mAsiaCountry.get(counter_level_two).otherCityOne)
                     mOtherAsiaCity.add(mAsiaCountry.get(counter_level_two).otherCityTwo)
                     mOtherAsiaCity.add(mAsiaCountry.get(counter_level_two).otherCityThree)
-                    Log.d("myTag", "mCountry" + mAllCountry.size)
                     answer_one_level_two.set(mOtherAsiaCity.get(randomOne))
                     answer_two_level_two.set(mOtherAsiaCity.get(randomTwo))
                     answer_three_level_two.set(mOtherAsiaCity.get(randomThree))
@@ -98,13 +91,6 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
 
                     capitalHelp_level_two.set(mAllCountry.get(counter_level_two).capital)
 
-                    Log.d("myLog", "random One" + randomOne)
-                    Log.d("myLog", "random Two" + randomTwo)
-                    Log.d("myLog", "random Three" + randomThree)
-                    Log.d("myLog", "random Four" + randomFour)
-
-                    Log.d("myLog", "mCountry" + mAllCountry.size.toString())
-                    Log.d("myLog", "counter" + counter_level_two.toString())
                 }))
     }
 
@@ -114,8 +100,6 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
 
         if ((mAsiaCountry.get(counter_level_two).capital).equals(capitalName_level_two.get(), ignoreCase = true)) {
             counter_level_two++
-            Log.d("myLog", "mCountry.size " + mAsiaCountry.size + " " + "counter " + counter_level_two)
-            Log.d("myLog", "mCountry.size " + (counter_level_two == (mAsiaCountry.size - 1)))
             mCounter_level_two.add(counter_level_two)
             score_level_two.set(counter_level_two.toString())
             countryNameV_II_level_two.set("")
@@ -133,11 +117,6 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
         } else {
             countryNameV_II_level_two.set(WRONG_ANSWER)
             wrongAnswerCounter_level_two++
-
-            Log.d("myLog", "answer is not correct")
-            Log.d("myLog", "checkAnswer" + countryName_level_two.get() + "..." + capitalName_level_two.get())
-            Log.d("myLog", "checkAnswer")
-            Log.d("myLog", "counter" + counter_level_two.toString() + "..." + mCounter_level_two.size)
         }
 
         if (counter_level_two > 10) {
@@ -156,17 +135,13 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
         attemps_level_two.set((ATTEMPS - wrongAnswerCounter_level_two).toString())
         tips_level_two.set((TIPS - helpCounter_level_two).toString())
 
-
-        if (counter_level_two == (mAsiaCountry.size-1)) {
+        if (counter_level_two == (mAsiaCountry.size - 1)) {
             countryName_level_two.set(WIN_LEVEL_TWO)
 
             answer_one_level_two.set("")
             answer_two_level_two.set("")
             answer_three_level_two.set("")
             answer_four_level_two.set("")
-
-            Log.d("myLog", "mCountry.size " + mAsiaCountry.size + " " + "counter " + counter_level_two)
-            Log.d("myLog", "Win Game")
 
             saveResult()
 
@@ -214,23 +189,17 @@ class LevelTwoViewModel : BaseViewModel<GameRouter>() {
 
     fun setAnswerOne() {
         capitalName_level_two.set(answer_one_level_two.get())
-        Log.d("myLog", "setAnswer 1()" + capitalName_level_two.get())
     }
 
     fun setAnswerTwo() {
         capitalName_level_two.set(answer_two_level_two.get())
-        Log.d("myLog", "setAnswer 2()" + capitalName_level_two.get())
     }
 
     fun setAnswerThree() {
         capitalName_level_two.set(answer_three_level_two.get())
-        Log.d("myLog", "setAnswer 3()" + capitalName_level_two.get())
     }
 
     fun setAnswerFour() {
         capitalName_level_two.set(answer_four_level_two.get())
-        Log.d("myLog", "setAnswer 4()" + capitalName_level_two.get())
     }
-
-
 }

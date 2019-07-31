@@ -9,9 +9,6 @@ import io.reactivex.Observable
 class GetCountryUseCase(postExecutorThread: PostExecutorThread
                         , private val countryRepository: CountryRepository) : BaseUseCase(postExecutorThread) {
 
-
-
-
     fun get(): Observable<List<Country>> {
      //   Log.d(TAG,"get From GET COUNTRY USE CASE")
         return countryRepository.getCountry()

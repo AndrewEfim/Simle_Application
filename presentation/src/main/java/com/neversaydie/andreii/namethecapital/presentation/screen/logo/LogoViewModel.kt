@@ -28,16 +28,7 @@ class LogoViewModel : BaseViewModel<GameRouter>() {
     var resultLevelFour = ObservableField<String>(" ")
     var resultLevelFive = ObservableField<String>(" ")
     var commonResult = ObservableField<String>("")
-
-
     init {
-        // val newResult: Int = sharedPreference.getInt(SHARED_COUNTER_RESULT, 0)
-        // if (Integer.parseInt(result.get().toString()) < newResult) {
-        //result.set(sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0).toString())
-
-
-// FIXME       if (Integer.parseInt(result.get().toString()) < sharedPreference.getInt(SHARED_COUNTER_RESULT, 0)) {
-//        }
 
     }
 
@@ -62,11 +53,8 @@ class LogoViewModel : BaseViewModel<GameRouter>() {
 
     fun checkNetConnection() {
         if (isOnline()) {
-            Log.d("myLog", "isOnline on " + isOnline())
             Toast.makeText(App.instance.applicationContext, "Интернет подключен", Toast.LENGTH_SHORT).show()
         } else {
-            Log.d("myLog", "isOnline of " + isOnline())
-
             Toast.makeText(App.instance.applicationContext, "Проверьте подключение к интернету", Toast.LENGTH_SHORT).show()
         }
     }

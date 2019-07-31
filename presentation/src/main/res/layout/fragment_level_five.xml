@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Попытки"
-                android:textColor="#f9f7f7"
+                android:textColor="@color/colorRed"
                 tools:layout_editor_absoluteX="41dp"
                 tools:layout_editor_absoluteY="1dp" />
 
@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Подсказки"
-                android:textColor="#fcf7f7" />
+                android:textColor="@color/colorRed" />
 
             <TextView
                 android:id="@+id/textView_points_level_five"
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Очки"
-                android:textColor="#f9f7f7" />
+                android:textColor="@color/colorRed" />
         </LinearLayout>
 
         <LinearLayout

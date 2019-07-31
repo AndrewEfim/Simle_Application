@@ -26,7 +26,6 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
     private val SHARED_COUNTER_RESULT_LVL_FIVE = "GAME_RESULT_LVL_FIVE"
     private val SHARED_CONNECTION = "Connection"
 
-
     var fragDialog: DialogFragment? = null
 
     override fun provideViewModel(): LogoViewModel {
@@ -39,12 +38,8 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-        fragDialog = MyDialog()
-
+                //        fragDialog = MyDialog()
         val sharedPreference: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.instance)
-
         val resultLvlOne = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_ONE, 0))
         val resultLvlTwo = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_TWO, 0))
         val resultLvlThree = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_THREE, 0))
@@ -52,16 +47,12 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
         val resultLvlFive = (sharedPreference.getInt(SHARED_COUNTER_RESULT_LVL_FIVE, 0))
         val connection: Boolean = (sharedPreference.getBoolean(SHARED_CONNECTION, false))
 
-
         val mAdView: AdView = adView
         val adRequest: AdRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
-
-
         textView_title.setOnClickListener({
             // viewModel.setZeroToLevels()
-            Log.d("myLog", "viewModel.setZeroToLevels()")
         })
 
         button_lvl_2.isEnabled = false
@@ -90,10 +81,7 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
             button_lvl_5.isEnabled = true
         }
 //FIXME потом настороить, а может быть удалить
-        if (connection == false) {
-            Log.d("myLog", "connection" + connection)
-            (fragDialog as MyDialog).show(fragmentManager, "fragDialog")//
-        }
+
 //
         button_lvl_1.setOnClickListener({
             router?.goToLevelOne()
@@ -110,8 +98,5 @@ class LogoFragment : BaseMvvmFragment<LogoViewModel, GameRouter, FragmentLogoBin
         button_lvl_5.setOnClickListener({
             router?.goToLevelFive()
         })
-
-
     }
-
 }

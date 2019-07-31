@@ -20,56 +20,48 @@ class GameRouter(activity: GameMainActivity) : BaseRouter<GameMainActivity>(acti
         replaceFragment(activity.supportFragmentManager
                 , LogoFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLogo")
     }
 
     fun goToGame() {
         replaceFragment(activity.supportFragmentManager
                 , GameFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToGame")
     }
 
     fun goToLevelOne() {
         replaceFragment(activity.supportFragmentManager
                 , LevelOneFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLevelOne")
     }
 
     fun goToLevelTwo() {
         replaceFragment(activity.supportFragmentManager
                 , LevelTwoFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLevelTow")
     }
 
     fun goToLevelThree() {
         replaceFragment(activity.supportFragmentManager
                 , LevelThreeFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLevelThree")
     }
 
     fun goToLevelFour() {
         replaceFragment(activity.supportFragmentManager
                 , LevelFourFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLevelFour")
     }
 
     fun goToLevelFive() {
         replaceFragment(activity.supportFragmentManager
                 , LevelFiveFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToLevelFive")
     }
 
     fun goToGameResult() {
         replaceFragment(activity.supportFragmentManager
                 , GameResultFragment()
                 , R.id.fragmentConteiner, false)
-        Log.d(TAG, "goToGameResult")
     }
 
 }

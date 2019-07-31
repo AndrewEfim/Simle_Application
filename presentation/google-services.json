@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "498549965844",
+    "firebase_url": "https://namethecapital-6b872.firebaseio.com",
+    "project_id": "namethecapital-6b872",
+    "storage_bucket": "namethecapital-6b872.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498549965844:android:1b16011a97960e5b",
+        "android_client_info": {
+          "package_name": "com.neversaydie.andreii.namethecapital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498549965844-l30kvkjs7vvlid89lc7emsaurlahunug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neversaydie.andreii.namethecapital",
+            "certificate_hash": "5a4ec9da885762d300438c79b872c98986fe199b"
+          }
+        },
+        {
+          "client_id": "498549965844-6p9i6mv9l4i9s3jmnon0gbeesm2bifuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChAQsUYM21HF4TWIbjlVUBbiwyC9s4mgo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498549965844-6p9i6mv9l4i9s3jmnon0gbeesm2bifuc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

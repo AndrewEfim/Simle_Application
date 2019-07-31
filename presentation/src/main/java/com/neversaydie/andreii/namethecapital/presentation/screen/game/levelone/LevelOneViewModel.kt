@@ -22,7 +22,7 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
     private val WRONG_ANSWER_COUNT: Int = 4
     private val END_GAME: String = "Вы проиграли !"
     val WRONG_ANSWER: String = "Ответ не верный"
-    private val WIN_LEVEL_ONE: String = "Вы выиграли Уровень №1"
+    private val WIN_LEVEL_ONE: String = "Вы прошли Уровень №1"
     private val SHARED_COUNTER_RESULT = "GAME_RESULT_LVL_ONE"
     private val SHARED_COUNTER_RESULT_LVL_ONE = "GAME_RESULT_ONE"
 
@@ -88,7 +88,6 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
                     mOtherEuropeCity.add(mAllCountry.get(counter_level_one).otherCityOne)
                     mOtherEuropeCity.add(mAllCountry.get(counter_level_one).otherCityTwo)
                     mOtherEuropeCity.add(mAllCountry.get(counter_level_one).otherCityThree)
-                    Log.d("myTag", "mCountry" + mAllCountry.size)
                     answer_one_level_one.set(mOtherEuropeCity.get(randomOne))
                     answer_two_level_one.set(mOtherEuropeCity.get(randomTwo))
                     answer_three_level_one.set(mOtherEuropeCity.get(randomThree))
@@ -96,14 +95,6 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
                     countryName_level_one.set(mAllCountry.get(counter_level_one).country)
 
                     capitalHelp_level_one.set(mAllCountry.get(counter_level_one).capital)
-
-                    Log.d("myLog", "random One" + randomOne)
-                    Log.d("myLog", "random Two" + randomTwo)
-                    Log.d("myLog", "random Three" + randomThree)
-                    Log.d("myLog", "random Four" + randomFour)
-
-                    Log.d("myLog", "mCountry" + mAllCountry.size.toString())
-                    Log.d("myLog", "counter" + counter_level_one.toString())
                 }))
     }
 
@@ -113,8 +104,6 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
 
         if ((mEuropeCountry.get(counter_level_one).capital).equals(capitalName_level_one.get(), ignoreCase = true)) {
             counter_level_one++
-            Log.d("myLog", "mCountry.size " + mEuropeCountry.size + " " + "counter " + counter_level_one)
-            Log.d("myLog", "mCountry.size " + (counter_level_one == (mEuropeCountry.size - 1)))
             mCounter_level_one.add(counter_level_one)
             score_level_one.set(counter_level_one.toString())
             countryNameV_II_level_one.set("")
@@ -132,11 +121,6 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
         } else {
             countryNameV_II_level_one.set(WRONG_ANSWER)
             wrongAnswerCounter_level_one++
-
-            Log.d("myLog", "answer is not correct")
-            Log.d("myLog", "checkAnswer" + countryName_level_one.get() + "..." + capitalName_level_one.get())
-            Log.d("myLog", "checkAnswer")
-            Log.d("myLog", "counter" + counter_level_one.toString() + "..." + mCounter_level_one.size)
         }
         if (wrongAnswerCounter_level_one == WRONG_ANSWER_COUNT) {
             countryName_level_one.set(END_GAME)
@@ -157,8 +141,6 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
             answer_three_level_one.set("")
             answer_four_level_one.set("")
 
-            Log.d("myLog", "mCountry.size " + mEuropeCountry.size + " " + "counter " + counter_level_one)
-            Log.d("myLog", "Win Game")
             saveResult()
 
             Timer().schedule(object : TimerTask() {
@@ -206,23 +188,17 @@ class LevelOneViewModel : BaseViewModel<GameRouter>() {
 
     fun setAnswerOne() {
         capitalName_level_one.set(answer_one_level_one.get())
-        Log.d("myLog", "setAnswer 1()" + capitalName_level_one.get())
     }
 
     fun setAnswerTwo() {
         capitalName_level_one.set(answer_two_level_one.get())
-        Log.d("myLog", "setAnswer 2()" + capitalName_level_one.get())
     }
 
     fun setAnswerThree() {
         capitalName_level_one.set(answer_three_level_one.get())
-        Log.d("myLog", "setAnswer 3()" + capitalName_level_one.get())
     }
 
     fun setAnswerFour() {
         capitalName_level_one.set(answer_four_level_one.get())
-        Log.d("myLog", "setAnswer 4()" + capitalName_level_one.get())
     }
-
-
 }

@@ -32,8 +32,7 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
             textView_Help_v1_level_three.visibility = View.VISIBLE
             viewModel.asckHelp()
             if (viewModel.helpCounter_level_three == 3) {
-                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_three)
-                button_Help_level_three.isClickable=false
+                button_Help_level_three.isClickable = false
             }
         })
 
@@ -43,8 +42,6 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
             if (textView_Help_v1_level_three.visibility == View.VISIBLE) {
                 textView_Help_v1_level_three.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_1")
         })
         buttonAnswer_2_level_three.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerTwo()
@@ -52,8 +49,6 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
             if (textView_Help_v1_level_three.visibility == View.VISIBLE) {
                 textView_Help_v1_level_three.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_2")
         })
         buttonAnswer_3_level_three.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerThree()
@@ -61,8 +56,6 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
             if (textView_Help_v1_level_three.visibility == View.VISIBLE) {
                 textView_Help_v1_level_three.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_3")
         })
         buttonAnswer_4_level_three.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerFour()
@@ -70,8 +63,6 @@ class LevelThreeFragment : BaseMvvmFragment<LevelThreeViewModel, GameRouter, Fra
             if (textView_Help_v1_level_three.visibility == View.VISIBLE) {
                 textView_Help_v1_level_three.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_4")
         })
     }
 

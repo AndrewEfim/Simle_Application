@@ -32,8 +32,7 @@ class LevelTwoFragment : BaseMvvmFragment<LevelTwoViewModel, GameRouter, Fragmen
             textView_Help_v1_level_two.visibility = View.VISIBLE
             viewModel.asckHelp()
             if (viewModel.helpCounter_level_two == 3) {
-                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_two)
-                button_Help_level_two.isClickable=false
+                button_Help_level_two.isClickable = false
             }
         })
 
@@ -43,8 +42,6 @@ class LevelTwoFragment : BaseMvvmFragment<LevelTwoViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_two.visibility == View.VISIBLE) {
                 textView_Help_v1_level_two.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_1")
         })
         buttonAnswer_2_level_two.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerTwo()
@@ -52,8 +49,6 @@ class LevelTwoFragment : BaseMvvmFragment<LevelTwoViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_two.visibility == View.VISIBLE) {
                 textView_Help_v1_level_two.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_2")
         })
         buttonAnswer_3_level_two.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerThree()
@@ -61,8 +56,6 @@ class LevelTwoFragment : BaseMvvmFragment<LevelTwoViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_two.visibility == View.VISIBLE) {
                 textView_Help_v1_level_two.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_3")
         })
         buttonAnswer_4_level_two.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerFour()
@@ -70,9 +63,6 @@ class LevelTwoFragment : BaseMvvmFragment<LevelTwoViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_two.visibility == View.VISIBLE) {
                 textView_Help_v1_level_two.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_4")
         })
     }
-
 }

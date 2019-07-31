@@ -9,8 +9,9 @@
     <string name="level_four_result">Уровень №4 результат</string>
     <string name="level_five_result">Уровень №5 результат</string>
 
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_ad_unit_id1">ca-app-pub-2168756955488044/8504031904</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2168756955488044~4193094363</string>
+
+    <string name="banner_ad_unit_id1">ca-app-pub-2168756955488044/5621849815</string>
     <string name="nameGoToStart">В начало</string>
     <string name="SetZero">Обнулить результат</string>
     <string name="Summ">Сумма</string>

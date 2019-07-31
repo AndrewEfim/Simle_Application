@@ -38,7 +38,6 @@ class GameMainActivity : BaseMvvmActivity<GameMainViewModel, GameRouter, Activit
 
         if (savedInstanceState == null) {
             router.goToLogo()
-            Log.d("myLog", "goTOLogo")
         }
     }
 

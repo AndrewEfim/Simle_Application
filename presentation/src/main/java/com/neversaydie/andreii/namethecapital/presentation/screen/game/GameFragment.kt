@@ -46,8 +46,6 @@ class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1B
             if (textView_Help_v1.visibility == View.VISIBLE) {
                 textView_Help_v1.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_1")
         })
         buttonAnswer_2.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerTwo()
@@ -55,8 +53,6 @@ class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1B
             if (textView_Help_v1.visibility == View.VISIBLE) {
                 textView_Help_v1.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_2")
         })
         buttonAnswer_3.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerThree()
@@ -64,8 +60,6 @@ class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1B
             if (textView_Help_v1.visibility == View.VISIBLE) {
                 textView_Help_v1.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_3")
         })
         buttonAnswer_4.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerFour()
@@ -73,10 +67,6 @@ class GameFragment : BaseMvvmFragment<GameViewModel, GameRouter, FragmentGameV1B
             if (textView_Help_v1.visibility == View.VISIBLE) {
                 textView_Help_v1.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_4")
         })
-
     }
-
 }

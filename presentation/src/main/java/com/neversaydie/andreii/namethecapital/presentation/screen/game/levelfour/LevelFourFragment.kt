@@ -36,7 +36,6 @@ class LevelFourFragment : BaseMvvmFragment<LevelFourViewModel, GameRouter, Fragm
             textView_Help_v1_level_four.visibility = View.VISIBLE
             viewModel.asckHelp()
             if (viewModel.helpCounter_level_four == 3) {
-                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_four)
                 button_Help_level_four.isClickable=false
             }
 
@@ -49,7 +48,6 @@ class LevelFourFragment : BaseMvvmFragment<LevelFourViewModel, GameRouter, Fragm
                 textView_Help_v1_level_four.visibility = View.GONE
             }
 
-            Log.d("myLog", "buttonAnswer_1")
         })
         buttonAnswer_2_level_four.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerTwo()
@@ -58,7 +56,6 @@ class LevelFourFragment : BaseMvvmFragment<LevelFourViewModel, GameRouter, Fragm
                 textView_Help_v1_level_four.visibility = View.GONE
             }
 
-            Log.d("myLog", "buttonAnswer_2")
         })
         buttonAnswer_3_level_four.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerThree()
@@ -67,7 +64,6 @@ class LevelFourFragment : BaseMvvmFragment<LevelFourViewModel, GameRouter, Fragm
                 textView_Help_v1_level_four.visibility = View.GONE
             }
 
-            Log.d("myLog", "buttonAnswer_3")
         })
         buttonAnswer_4_level_four.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerFour()
@@ -76,7 +72,6 @@ class LevelFourFragment : BaseMvvmFragment<LevelFourViewModel, GameRouter, Fragm
                 textView_Help_v1_level_four.visibility = View.GONE
             }
 
-            Log.d("myLog", "buttonAnswer_4")
         })
     }
 

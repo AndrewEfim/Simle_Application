@@ -80,7 +80,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
                     mOtherCity.add(mCountry.get(counter).otherCityOne)
                     mOtherCity.add(mCountry.get(counter).otherCityTwo)
                     mOtherCity.add(mCountry.get(counter).otherCityThree)
-                    Log.d("myTag", "mCountry" + mCountry.size)
                     answer_one.set(mOtherCity.get(randomOne))
                     answer_two.set(mOtherCity.get(randomTwo))
                     answer_three.set(mOtherCity.get(randomThree))
@@ -89,13 +88,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
 
                     capitalHelp.set(mCountry.get(counter).capital)
 
-                    Log.d("myLog", "random One" + randomOne)
-                    Log.d("myLog", "random Two" + randomTwo)
-                    Log.d("myLog", "random Three" + randomThree)
-                    Log.d("myLog", "random Four" + randomFour)
-
-                    Log.d("myLog", "mCountry" + mCountry.size.toString())
-                    Log.d("myLog", "counter" + counter.toString())
                 }))
     }
 
@@ -105,8 +97,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
 
         if ((mCountry.get(counter).capital).equals(capitalName.get(), ignoreCase = true)) {
             counter++
-            Log.d("myLog", "mCountry.size " + mCountry.size + " " + "counter " + counter)
-            Log.d("myLog", "mCountry.size " + (counter == (mCountry.size - 1)))
             mCounter.add(counter)
             score.set(counter.toString())
             countryNameV_II.set("")
@@ -125,10 +115,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
             countryNameV_II.set(WRONG_ANSWER)
             wrongAnswerCounter++
 
-            Log.d("myLog", "answer is not correct")
-            Log.d("myLog", "checkAnswer" + countryName.get() + "..." + capitalName.get())
-            Log.d("myLog", "checkAnswer")
-            Log.d("myLog", "counter" + counter.toString() + "..." + mCounter.size)
         }
         if (wrongAnswerCounter == WRONG_ANSWER_COUNT) {
             countryName.set(END_GAME)
@@ -149,8 +135,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
             answer_three.set("")
             answer_four.set("")
 
-            Log.d("myLog", "mCountry.size " + mCountry.size + " " + "counter " + counter)
-            Log.d("myLog", "Win Game")
             saveResult()
 
             Timer().schedule(object : TimerTask() {
@@ -179,7 +163,6 @@ class GameViewModel : BaseViewModel<GameRouter>() {
 
     fun saveResult() {
         sharedPref?.edit()?.putInt(SHARED_COUNTER_RESULT, counter)?.apply()
-
     }
 
     fun getResult(): Int {
@@ -197,22 +180,18 @@ class GameViewModel : BaseViewModel<GameRouter>() {
 
     fun setAnswerOne() {
         capitalName.set(answer_one.get())
-        Log.d("myLog", "setAnswer 1()" + capitalName.get())
     }
 
     fun setAnswerTwo() {
         capitalName.set(answer_two.get())
-        Log.d("myLog", "setAnswer 2()" + capitalName.get())
     }
 
     fun setAnswerThree() {
         capitalName.set(answer_three.get())
-        Log.d("myLog", "setAnswer 3()" + capitalName.get())
     }
 
     fun setAnswerFour() {
         capitalName.set(answer_four.get())
-        Log.d("myLog", "setAnswer 4()" + capitalName.get())
     }
 
 }

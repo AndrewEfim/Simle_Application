@@ -34,10 +34,8 @@ class LevelOneFragment : BaseMvvmFragment<LevelOneViewModel, GameRouter, Fragmen
             textView_Help_v1_level_one.visibility = View.VISIBLE
             viewModel.asckHelp()
             if (viewModel.helpCounter_level_one == 3) {
-                Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_one)
-                button_Help_level_one.isClickable=false
+                button_Help_level_one.isClickable = false
             }
-            Log.d("myLog","helpCounter_level_one"+viewModel.helpCounter_level_one)
 
         })
 
@@ -47,8 +45,6 @@ class LevelOneFragment : BaseMvvmFragment<LevelOneViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_one.visibility == View.VISIBLE) {
                 textView_Help_v1_level_one.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_1")
         })
         buttonAnswer_2_level_one.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerTwo()
@@ -56,8 +52,6 @@ class LevelOneFragment : BaseMvvmFragment<LevelOneViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_one.visibility == View.VISIBLE) {
                 textView_Help_v1_level_one.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_2")
         })
         buttonAnswer_3_level_one.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerThree()
@@ -65,8 +59,6 @@ class LevelOneFragment : BaseMvvmFragment<LevelOneViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_one.visibility == View.VISIBLE) {
                 textView_Help_v1_level_one.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_3")
         })
         buttonAnswer_4_level_one.setOnClickListener(View.OnClickListener {
             viewModel.setAnswerFour()
@@ -74,8 +66,6 @@ class LevelOneFragment : BaseMvvmFragment<LevelOneViewModel, GameRouter, Fragmen
             if (textView_Help_v1_level_one.visibility == View.VISIBLE) {
                 textView_Help_v1_level_one.visibility = View.GONE
             }
-
-            Log.d("myLog", "buttonAnswer_4")
         })
 
 

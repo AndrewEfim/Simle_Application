@@ -12,10 +12,10 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_main_h_s">
+        android:background="@drawable/ic_amerika_h"
+        >
 
         <TextView
             android:id="@+id/textView_title"
@@ -105,7 +105,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id"
+            ads:adUnitId="@string/banner_ad_unit_id1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout_buttons"></com.google.android.gms.ads.AdView>

@@ -14,7 +14,7 @@
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_game_result_h_s">
+        android:background="@drawable/ic_evropa_h">
 
         <TextView
             android:id="@+id/textView"
